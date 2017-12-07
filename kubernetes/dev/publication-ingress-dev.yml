@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: publication-ingress-dev
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: publications-service-dev.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: publication-service-dev
+          servicePort: 8080

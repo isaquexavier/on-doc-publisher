@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: publication-service-app-prod
+  labels:
+    app: publication-service-app-prod
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5
+  minReadySeconds: 30
+  selector:
+    matchLabels:
+      app: publication-service-app-prod
+
+  template:
+    metadata:
+      labels:
+        app: publication-service-app-prod
+    spec:
+      containers:
+      - name: publication-service-app-prod
+        image: docker.io/isaqueaxakelius/publications-service:latest
+        command: ["java"]
+        args: ["-jar", "-Dspring.profiles.active=prod", "-Xms32m", "-Xmx128m", "/usr/src/on-doc-publisher-0.0.1-SNAPSHOT.jar"]
+
+        resources:
+          requests:
+            memory: "256M"
+            cpu: 0.2
+          limits:
+            memory: "384M"
+            cpu: 0.4
+        ports:
+        - containerPort: 8080
