@@ -33,6 +33,8 @@
 
     Please create a new and public/free repository docker.io/{USER}/publications-service [Click here](https://cloud.docker.com "Click here to create a new account and repository for free")
 
+    Execute the following commands in the root of project's directory.
+
     ```
     $ docker build -t on-doc-publisher
     $ docker tag on-doc-publisher {USER}/publication-service:latest
@@ -41,9 +43,39 @@
 
 ### Kubernetes setup [minikube - local]
 
+Execute the following commands in the root of project's directory.
+- Create a deploy, service and ingress for DEV environment
+    ```
+    $ kubectl create -f kubernetes/dev/publication-deployment-dev.yml
+    $ kubectl create -f kubernetes/dev/publication-service-dev.yml
+    $ kubectl create -f kubernetes/dev/publication-ingress-dev.yml
+    ```
+    
+- Create a deploy, service and ingress for PROD environment
+    ```
+    $ kubectl create -f kubernetes/prod/publication-deployment-prod.yml
+    $ kubectl create -f kubernetes/prod/publication-service-prod.yml
+    $ kubectl create -f kubernetes/prod/publication-ingress-prod.yml
+    ```
+
+- Mapping minikube IP in hosts file
+    
+    You can easily find minikube IP by running the following command
+    
+    ```
+    $ minikube ip
+    ``` 
+    
+    After that you should place the following entry in the ```/etc/hosts``` file
+    
+    ```
+    {MINIKUBE-IP} publications-service-dev.example.com publications-service-prod.example.com
+    ```
+
 ### How to use the App
 
-A Publisher of Online-Documents needs a simple micro-service to manage its publications.
+The App consists on a simple Publisher of Online-Documents to manage its publications.
+Only one entity is defined which is a 'Publication'. Using the App you may create, modify, publish and retrieve a Publication.
 
 A publication contains of a few attributes:
 - isbn: 0321356683
@@ -58,7 +90,7 @@ A publication contains of a few attributes:
 
 The App has 5 endpoints which can be tested through Swagger embedded tool.
 
-After the POD has been deployed on minikube the following URL can be accessed.
+After the PODs deployments on minikube the following URLs might be accessed.
 
 - [Swagger - DEV](http://publications-service-dev.example.com/api/swagger-ui.html#!)
 - [Swagger - PRD](http://publications-service-prod.example.com/api/swagger-ui.html#!)
