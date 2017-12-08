@@ -97,4 +97,24 @@ After the PODs deployments on minikube the following URLs might be accessed.
 
 
 
+### References
 
+- Kotlin
+    
+    [Official Site](https://kotlinlang.org/)
+    
+    [General References](https://kotlin.link/)
+
+- Docker
+
+    [Get Started](https://docs.docker.com/get-started/)
+    
+    [Docker Cloud](https://cloud.docker.com/)
+    
+- Kubernetes + Minikube 
+
+    [Running Kubernetes Locally via Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/#minikube-features)
+
+    [Setting up Ingress on Minikube](https://medium.com/@Oskarr3/setting-up-ingress-on-minikube-6ae825e98f82)
+
+    [Katakoda - Kubernetes cod training](https://www.katacoda.com/courses/kubernetes)
