@@ -45,7 +45,18 @@
 
 ### Docker / docker-compose
 
+Execute the following commands in the root of project's directory.
+```
+$ docker-compose up
+```
 
+It should start both services, you might check using the following command.
+
+This command will list all the containers/states from the docker-compose
+
+```
+$ docker-compose ps
+```
 
 ### Kubernetes setup [minikube - local]
 
