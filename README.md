@@ -25,8 +25,10 @@
 ### Build and Run
 - Build App artifact
 
+    Use wrapped gradle to make things easier.
+
     ```
-    $ gradle clean build -x test
+    $ ./gradlew clean build -x test
     ```
 
 - Build docker image

@@ -1,8 +1,14 @@
 version: '3'
 services:
-  on-doc-publisher:
+  on-doc-publisher-dev:
     image: on-doc-publisher:latest
     ports:
       - "8080:8080"
-    command: ["java","-jar","-Dspring.profiles.active=local", "/usr/src/on-doc-publisher-0.0.1-SNAPSHOT.jar"]
+    command: ["java","-jar","-Dspring.profiles.active=dev", "/usr/src/on-doc-publisher-0.0.1-SNAPSHOT.jar"]
+    restart: always
+  on-doc-publisher-prod:
+    image: on-doc-publisher:latest
+    ports:
+      - "9080:8080"
+    command: ["java","-jar","-Dspring.profiles.active=prod", "/usr/src/on-doc-publisher-0.0.1-SNAPSHOT.jar"]
     restart: always
