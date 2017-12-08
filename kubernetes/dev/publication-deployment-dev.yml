@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: publication-service-app-dev
-        image: docker.io/isaqueaxakelius/publications-service:latest
+        image: docker.io/isaquexavier/publications-service:latest
         command: ["java"]
         args: ["-jar", "-Dspring.profiles.active=dev", "-Xms32m", "-Xmx128m", "/usr/src/on-doc-publisher-0.0.1-SNAPSHOT.jar"]
 

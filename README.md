@@ -43,6 +43,10 @@
     $ docker push {USER}/publication-service:latest
     ```
 
+### Docker / docker-compose
+
+
+
 ### Kubernetes setup [minikube - local]
 
 Execute the following commands in the root of project's directory.
