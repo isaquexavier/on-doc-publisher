@@ -60,6 +60,16 @@ $ docker-compose ps
 
 ### Kubernetes setup [minikube - local]
 
+- Starting minikube
+
+    Run the following command in order to start minikube locally.
+
+    Note: assuming your minikube binary is present in the PATH of the OS.
+    
+    ```
+    $ minikube start
+    ```
+
 Execute the following commands in the root of project's directory.
 - Create a deploy, service and ingress for DEV environment
     ```
@@ -87,6 +97,14 @@ Execute the following commands in the root of project's directory.
     
     ```
     {MINIKUBE-IP} publications-service-dev.example.com publications-service-prod.example.com
+    ```
+
+- Kubernetes Dashboard
+
+    Kubernetes has a light Dashboard were you can check information about the clusters and resources. You may access the Dashboard by accessing the for address below.
+
+    ```
+    http://{MINIKUBE-IP}:30000
     ```
 
 ### How to use the App
